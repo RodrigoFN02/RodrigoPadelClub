@@ -1,0 +1,18 @@
+
+<div class="contenedor">
+  <div class="contenido">
+    <h2>Iniciar sesión</h2>
+    <form (ngSubmit)="login()">
+      <label>Usuario:</label>
+      <input [(ngModel)]="usuario" name="usuario" required />
+      <br />
+      <label>Contraseña:</label>
+      <input type="password" [(ngModel)]="password" name="password" required />
+      <br />
+      <button type="submit">Entrar</button>
+      <p>Si no tienes una cuenta creala <a routerLink="registro">aqui</a></p>
+    </form>
+  </div>
+</div>
+<p>{{ mensaje }}</p>
+

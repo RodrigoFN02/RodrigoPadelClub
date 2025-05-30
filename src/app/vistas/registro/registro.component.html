@@ -1,0 +1,71 @@
+<!-- <div class="contenedor">
+  <div class="contenido">
+    <h2>Registro de Usuario</h2>
+    <form (ngSubmit)="registrar()">
+      <label>Nombre:</label>
+      <input [(ngModel)]="nombre" name="nombre" required />
+
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="email" name="email" required />
+
+      <label>Teléfono:</label>
+      <input [(ngModel)]="telefono" name="telefono" required />
+
+      <label>Contraseña:</label>
+      <input type="password" [(ngModel)]="contrasena" name="contrasena" required />
+
+      <label>Repetir contraseña:</label>
+      <input type="password" [(ngModel)]="repetirContrasena" name="repetirContrasena" required />
+
+      <button type="submit">Registrarse</button>
+
+      <p *ngIf="mensaje" class="error">{{ mensaje }}</p>
+    </form>
+
+    <p>Si ya tienes una cuenta vuelve al <a routerLink="">Inicio de sesion</a></p>
+  </div>
+</div> -->
+<div class="contenedor">
+  <div class="contenido">
+    <h2>Registro de Usuario</h2>
+
+    <form [formGroup]="registroForm" (ngSubmit)="registrar()">
+
+      <label>Nombre:</label>
+      <input formControlName="nombre" />
+      <div *ngIf="registroForm.get('nombre')?.invalid && registroForm.get('nombre')?.touched" class="error">
+        Nombre inválido. Solo letras (6–50).
+      </div>
+
+      <label>Email:</label>
+      <input type="email" formControlName="email" />
+      <div *ngIf="registroForm.get('email')?.invalid && registroForm.get('email')?.touched" class="error">
+        Email inválido. Solo minúsculas y con .
+      </div>
+
+      <label>Teléfono:</label>
+      <input formControlName="telefono" />
+      <div *ngIf="registroForm.get('telefono')?.invalid && registroForm.get('telefono')?.touched" class="error">
+        Teléfono inválido
+      </div>
+
+      <label>Contraseña:</label>
+      <input type="password" formControlName="contrasena" />
+      <div *ngIf="registroForm.get('contrasena')?.invalid && registroForm.get('contrasena')?.touched" class="error">
+        Contraseña inválida. Mínimo 8 caracteres, una mayúscula y un número.
+      </div>
+
+      <label>Repetir contraseña:</label>
+      <input type="password" formControlName="repetirContrasena" />
+      <div *ngIf="registroForm.errors && registroForm.get('repetirContrasena')?.touched" class="error">
+        Las contraseñas no coinciden.
+      </div>
+
+      <button type="submit" [disabled]="registroForm.invalid">Registrarse</button>
+
+      <p *ngIf="mensaje" class="error">{{ mensaje }}</p>
+    </form>
+
+    <p>Si ya tienes una cuenta vuelve al <a routerLink="">Inicio de sesión</a></p>
+  </div>
+</div>

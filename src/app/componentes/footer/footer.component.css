@@ -1,0 +1,23 @@
+.custom-footer {
+  background-color: #30B200 ;
+  color: white;
+  font-family: 'Markazi Text', serif;
+
+  .footer-logo {
+    width: 100px;
+    height: auto;
+  }
+
+  a {
+    color: #2323BF;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #2323BF;
+    }
+  }
+  .logo {
+  width: 175px;
+  margin: 40px;
+}
+}
