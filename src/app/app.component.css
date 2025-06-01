@@ -1,0 +1,9 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f2f5; /* o el fondo que uses */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

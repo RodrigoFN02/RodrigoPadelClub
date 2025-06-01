@@ -1,6 +1,5 @@
 <div class="carousel-propio">
      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <!-- Indicadores -->
           <div class="carousel-indicators">
                <button *ngFor="let img of images; let i = index" type="button"
                     data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="i" [class.active]="i === 0"
@@ -14,7 +13,7 @@
                </div>
           </div>
 
-          <!-- Controles -->
+
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                data-bs-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -27,3 +26,45 @@
           </button>
      </div>
 </div>
+
+<section class="text-center my-5 contenido-principal">
+  <h2 class="mb-4">Bienvenido a Nuestra Página</h2>
+
+  <div class="imagen-presentacion mb-4">
+    <img src="assets/home/Ejemplo_pista_padel.jpg" alt="PistasPadelMojados" class="img-fluid rounded shadow mx-auto d-block" style="max-width: 80%; height: auto;">
+  </div>
+  <div class="px-1">
+    <p class="lead">
+      Bienvenido a nuestra plataforma digital de reservas de padel, aqui podras encontrar diversos servicios tales como:
+  </div>
+</section>
+
+<section class="contenido">
+  <h3 class="text-center mb-4">Nuestros Servicios</h3>
+  <div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow">
+        <div class="card-body">
+          <h5 class="card-title">Reservas de pistas de padel</h5>
+          <p class="card-text">Reserva tu pista de pádel desde cualquier dispositivo, fácil y rápido.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow">
+        <div class="card-body">
+          <h5 class="card-title">Participacion de eventos</h5>
+          <p class="card-text">Inscríbete en divertidos eventos y torneos con los que podrás conocer a otras personas</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow">
+        <div class="card-body">
+          <h5 class="card-title">Plan de socios</h5>
+          <p class="card-text">Descubre que ventajas te proporciona apuntarte como socio en nuestro club, dirigete a la pagina de socios y descubrelo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

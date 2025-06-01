@@ -1,23 +1,41 @@
 .custom-footer {
   background-color: #30B200 ;
   color: white;
-  font-family: 'Markazi Text', serif;
 
-  .footer-logo {
+}
+.footer-logo {
     width: 100px;
     height: auto;
-  }
-
-  a {
-    color: #2323BF;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #2323BF;
-    }
-  }
-  .logo {
+  
+}
+.logo {
   width: 175px;
   margin: 40px;
+  }
+.rrss .social-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
 }
+.rrss i {
+  font-size: 3rem;
+  color: white;
+  transition: color 0.3s ease;
+  
+}
+.contacto-text {
+  font-size: 1.4rem;
+  color: white;
+}
+.rrss i:hover {
+  color: #2323BF;
+}
+@media (max-width: 767.98px) {
+  .rrss i {
+    font-size: 1.8rem;
+  }
+  .contacto-text {
+    font-size: 1rem;
+  }
 }

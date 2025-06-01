@@ -1,40 +1,14 @@
-<!-- <div class="contenedor">
-  <div class="contenido">
-    <h2>Registro de Usuario</h2>
-    <form (ngSubmit)="registrar()">
-      <label>Nombre:</label>
-      <input [(ngModel)]="nombre" name="nombre" required />
 
-      <label>Email:</label>
-      <input type="email" [(ngModel)]="email" name="email" required />
-
-      <label>Teléfono:</label>
-      <input [(ngModel)]="telefono" name="telefono" required />
-
-      <label>Contraseña:</label>
-      <input type="password" [(ngModel)]="contrasena" name="contrasena" required />
-
-      <label>Repetir contraseña:</label>
-      <input type="password" [(ngModel)]="repetirContrasena" name="repetirContrasena" required />
-
-      <button type="submit">Registrarse</button>
-
-      <p *ngIf="mensaje" class="error">{{ mensaje }}</p>
-    </form>
-
-    <p>Si ya tienes una cuenta vuelve al <a routerLink="">Inicio de sesion</a></p>
-  </div>
-</div> -->
 <div class="contenedor">
   <div class="contenido">
     <h2>Registro de Usuario</h2>
 
     <form [formGroup]="registroForm" (ngSubmit)="registrar()">
 
-      <label>Nombre:</label>
+      <label>Usuario:</label>
       <input formControlName="nombre" />
       <div *ngIf="registroForm.get('nombre')?.invalid && registroForm.get('nombre')?.touched" class="error">
-        Nombre inválido. Solo letras (6–50).
+        Nombre inválido. Solo letras (50).
       </div>
 
       <label>Email:</label>

@@ -1,1 +1,58 @@
-<p>reservas works!</p>
+<div class="contenedor">
+  <div class="contenido">
+    <h2>Reserva de pista</h2>
+
+    <form [formGroup]="reservaForm" (ngSubmit)="enviar()" class="formulario">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" placeholder="Tu nombre" />
+        <mat-error *ngIf="reservaForm.get('nombre')?.invalid && reservaForm.get('nombre')?.touched">
+          Nombre requerido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecha" placeholder="Selecciona una fecha" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="reservaForm.get('fecha')?.invalid && reservaForm.get('fecha')?.touched">
+          Fecha requerida.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Hora</mat-label>
+        <mat-select formControlName="hora" placeholder="Selecciona una hora">
+          <mat-option value="">Seleccione hora</mat-option>
+          <mat-option
+            *ngFor="let hora of horasTotales"
+            [value]="hora"
+            [disabled]="horaOcupadaEnFecha(hora, reservaForm.get('fecha')?.value, reservaForm.get('pista')?.value)">
+            {{ hora }}
+            <span *ngIf="horaOcupadaEnFecha(hora, reservaForm.get('fecha')?.value, reservaForm.get('pista')?.value)">
+              (ocupada)
+            </span>
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="reservaForm.get('hora')?.invalid && reservaForm.get('hora')?.touched">
+          Hora requerida.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Número de pista</mat-label>
+        <input matInput type="number" formControlName="pista" min="1" />
+        <mat-error *ngIf="reservaForm.get('pista')?.invalid && reservaForm.get('pista')?.touched">
+          Introduce un número válido de pista (mínimo 1).
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="reservaForm.invalid">Reservar</button>
+
+      <p *ngIf="mensaje" class="mensaje-error">{{ mensaje }}</p>
+
+    </form>
+  </div>
+</div>

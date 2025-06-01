@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
 images = [
-    'assets/foto-carousel1.jpg',
-    'assets/foto-carousel2.jpg',
-    'assets/foto-carousel3.jpg',
+    'assets/home/foto-carousel1.jpg',
+    'assets/home/foto-carousel2.jpg',
+    'assets/home/foto-carousel3.jpg',
   ];
 }

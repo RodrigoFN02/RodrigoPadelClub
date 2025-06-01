@@ -1,1 +1,19 @@
-<p>socios works!</p>
+<div class="socios-container">
+  <h1>Ventajas de ser socio</h1>
+  <ul class="ventajas">
+    <li>Acceso exclusivo a eventos</li>
+    <li>Descuentos en instalaciones</li>
+    <li>Participación en torneos</li>
+    <li>Newsletter mensual</li>
+  </ul>
+
+  <div *ngIf="esSocio; else noSocio" class="estado-socio">
+    <p>Ya eres socio.</p>
+    <button (click)="cancelarSuscripcion()">¿Quieres cancelar tu suscripción?</button>
+  </div>
+  <ng-template #noSocio>
+    <button (click)="registrarSocio()">Hazte socio</button>
+  </ng-template>
+
+  <p class="mensaje">{{ mensaje }}</p>
+</div>

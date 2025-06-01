@@ -1,0 +1,81 @@
+.card-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 350px;
+  margin-bottom: 24px;
+
+  /* Para que el botón pueda ir abajo */
+  height: 100%;
+  /* Opcional, para que las cards tengan la misma altura si están en un grid/flex */
+  min-height: 420px;
+}
+
+.card-title {
+  background-color: var(--color-primario);
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  border-radius: 6px 6px 0 0;
+  margin: -16px -16px 12px -16px;
+  text-align: center;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  object-fit: cover;
+}
+
+.card-description {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: #444;
+  word-wrap: break-word;    /* fuerza a romper palabras largas */
+  overflow-wrap: break-word;
+  white-space: normal;      /* para que el texto se adapte y haga salto de línea */
+  max-width: 100%; 
+}
+
+/* Botón ajustado */
+.btn-apuntarse {
+  background-color: #330B20; /* color solicitado */
+  color: white;
+  border: none;
+  padding: 8px 16px; /* más estrecho */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+
+  /* Posición abajo a la derecha */
+  align-self: flex-end;
+  margin-top: auto; /* empuja el botón hacia abajo */
+}
+
+.btn-apuntarse:hover {
+  background-color: #551438; /* tono más claro para hover */
+}
+@media (max-width: 640px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    justify-content: center;  /* centra las cards horizontalmente */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;          /* que ocupe todo el ancho disponible */
+  }
+
+  .card-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 350px;         /* mismo ancho que las cards en escritorio */
+    width: 100%;
+  }
+}

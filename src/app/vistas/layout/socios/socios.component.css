@@ -1,0 +1,158 @@
+/* Contenedor centrado vertical y horizontal */
+.socios-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #2323BF 0%, #5353C3 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  min-height: 70vh;
+
+  /* Flex para centrar verticalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.ventajas ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.ventajas li {
+  font-size: 1.3rem;
+  margin: 18px 0;
+  padding-left: 30px;
+  position: relative;
+  color: #e0f7f9;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+.ventajas li::before {
+  content: '✔';
+  color: #ffd700;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.4rem;
+  text-shadow: 0 0 3px #ffd700;
+}
+
+
+
+/* Botón con color #238300 y estilo similar al anterior */
+button {
+  background-color: #238300;
+  color: white;
+  padding: 15px 50px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(35, 131, 0, 0.5);
+  transition: all 0.3s ease;
+  min-width: 250px;
+}
+
+button:hover {
+  background-color: #1e7200;
+  box-shadow: 0 8px 20px rgba(35, 131, 0, 0.8);
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #999;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.mensaje {
+  margin-top: 25px;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #ffe066;
+  text-shadow: 0 0 5px #ffd700;
+}
+
+/* Mensaje de error con color rojo brillante */
+.mensaje.error {
+  color: #ff6b6b;
+  text-shadow: 0 0 8px #ff4b4b;
+}
+
+.estado-socio {
+  margin-top: 20px;
+}
+
+/* Responsive */
+
+/* Móviles */
+@media (max-width: 480px) {
+  .socios-container {
+    padding: 20px 15px;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  .ventajas li {
+    font-size: 1.1rem;
+    padding-left: 22px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 15px 0;
+    min-width: unset;
+  }
+
+  .mensaje {
+    font-size: 1rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .socios-container {
+    max-width: 90%;
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .ventajas li {
+    font-size: 1.2rem;
+  }
+
+  button {
+    min-width: unset;
+    width: 70%;
+  }
+}

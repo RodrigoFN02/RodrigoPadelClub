@@ -1,83 +1,4 @@
-// import { Component } from '@angular/core';
-// import { Router, RouterLink } from '@angular/router';
-// import { RegistrarService } from '../../servicios/registrar.service';
-// import { CommonModule } from '@angular/common';
-// import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 
-// @Component({
-//   selector: 'app-registro',
-//   standalone: true,
-//   imports:[ CommonModule, FormsModule,RouterLink, ReactiveFormsModule],
-//   templateUrl: './registro.component.html',
-//   styleUrl: './registro.component.css'
-// })
-// export class RegistroComponent {  
-//   nombre = '';
-//   email = '';
-//   telefono = '';
-//   contrasena = '';
-//   repetirContrasena = '';
-//   registroForm: FormGroup;
-//   mensaje = '';
-
-
-//   constructor(private registro: RegistrarService, private router: Router,private fb: FormBuilder) {
-//     this.registroForm = this.fb.group({
-//       usuario: [
-//         '',
-//         [
-//           Validators.required,
-//           Validators.pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ]{6,50}$/)
-//         ]
-//       ],
-//       password: [
-//         '',
-//         [
-//           Validators.required,
-//           Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)
-//         ]
-//       ],
-//       email: [
-//         '',
-//         [
-//           Validators.required,
-//           Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/)
-//         ]
-//       ],
-//       telefono: [
-//         '',
-//         [
-//           Validators.required,
-//           Validators.pattern(/^\d{9}$/)
-//         ]
-//       ]
-//     });
-//   }
-  
-
-//   registrar() {
-//     if (this.contrasena !== this.repetirContrasena) {
-//       this.mensaje = 'Las contraseñas no coinciden';
-//       return;
-//     }
-
-//     this.registro.registro({
-//       nombre: this.nombre,
-//       contrasena: this.contrasena,
-//       email: this.email,
-//       telefono: this.telefono
-//     }).subscribe({
-//       next: () => {
-//         this.mensaje = 'Registro exitoso. Redirigiendo...';
-//         setTimeout(() => this.router.navigate(['']), 2000);
-//       },
-//       error: (err) => {
-//         console.error(err);
-//         this.mensaje = 'Error al registrar el usuario';
-//       }
-//     });
-//   }
-// }
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -105,7 +26,7 @@ export class RegistroComponent {
         '',
         [
           Validators.required,
-          Validators.pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ]{6,50}$/)
+          Validators.pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ]{0,50}$/)
         ]
       ],
       email: [

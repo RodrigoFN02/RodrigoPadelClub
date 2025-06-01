@@ -1,0 +1,86 @@
+/* reservas.component.css */
+
+/* Contenedor principal centrado y con sombra */
+.contenedor {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Título del formulario */
+.contenido h2 {
+  text-align: center;
+  color: #1976d2;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* Formulario en columna con separación */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Campos que ocupan todo el ancho disponible */
+.full-width {
+  width: 100%;
+}
+
+/* Botón con buen padding y estilo visual */
+button[type='submit'] {
+  padding: 14px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+button[type='submit']:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed;
+}
+
+/* Mensaje de error tras envío */
+.mensaje-error {
+  margin-top: 16px;
+  color: #34d32f;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Texto de horas ocupadas en el select */
+.mat-option span {
+  color: #d32f2f;
+  font-style: italic;
+  margin-left: 6px;
+  font-size: 0.9em;
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 600px) {
+  .contenedor {
+    margin: 20px 12px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .contenido h2 {
+    font-size: 1.4rem;
+  }
+
+  button[type='submit'] {
+    font-size: 0.95rem;
+    padding: 12px 0;
+  }
+
+  .formulario {
+    gap: 16px;
+  }
+}

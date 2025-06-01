@@ -1,0 +1,11 @@
+<div class="card-container">
+  <div class="card-title">{{ titulo }}</div>
+  <img [src]="imagen" alt="{{ titulo }}" class="card-image" />
+  <p class="card-description">{{ descripcion }}</p>
+
+  <button
+    class="btn-apuntarse"
+    (click)="apuntarse()">
+    Apuntarme
+  </button>
+</div>

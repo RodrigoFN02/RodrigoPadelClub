@@ -10,7 +10,6 @@
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
 }
 .carousel-item.active {
   opacity: 1;
@@ -21,4 +20,51 @@
   width: 100%;          
   max-height: 400px;    
   object-fit: cover;      
+}
+/* Estilos generales */
+section {
+  padding: 20px 20px; /* Antes: 40px 20px */
+}
+
+/* Título centrado */
+section.text-center h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Imagen de presentación */
+.imagen-presentacion img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Texto enriquecedor */
+section .lead {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Título de sección de servicios */
+.contenido h3 {
+  font-size: 2rem;
+  color: #222;
+}
+
+/* Tarjetas de servicios */
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0)
 }
