@@ -1,0 +1,111 @@
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.btn-close:hover {
+  color: #000;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+/* Formularios */
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+/* Mensajes de error */
+.text-danger {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #d9534f;
+}
+
+/* Botón guardar */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  background-color: #30B200;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.2rem;
+}
+
+.btn-primary:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Alerta de error contraseña */
+.alert {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Espaciado entre campos */
+.mb-3 {
+  margin-bottom: 1rem;
+}

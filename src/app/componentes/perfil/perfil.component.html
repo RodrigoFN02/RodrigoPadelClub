@@ -1,0 +1,96 @@
+<div class="modal-fondo">
+  <div class="modal-contenido">
+
+    <button class="btn-close" aria-label="Cerrar" (click)="cerrarModal()"></button>
+
+    <h2>Editar perfil</h2>
+
+    <form [formGroup]="perfilForm" (ngSubmit)="guardarCambios()" novalidate>
+
+      <!-- Nombre -->
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          class="form-control"
+          formControlName="nombre"
+          placeholder="Tu nombre"
+        />
+        <div *ngIf="perfilForm.get('nombre')?.touched && perfilForm.get('nombre')?.invalid" class="text-danger">
+          <small *ngIf="perfilForm.get('nombre')?.errors?.['pattern']">Solo letras y espacios, máximo 50 caracteres.</small>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="ejemplo@correo.com"
+        />
+        <div *ngIf="perfilForm.get('email')?.touched && perfilForm.get('email')?.invalid" class="text-danger">
+          <small *ngIf="perfilForm.get('email')?.errors?.['pattern']">Introduce un correo válido.</small>
+        </div>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input
+          id="telefono"
+          type="tel"
+          class="form-control"
+          formControlName="telefono"
+          placeholder="Ej: 612345678"
+        />
+        <div *ngIf="perfilForm.get('telefono')?.touched && perfilForm.get('telefono')?.invalid" class="text-danger">
+          <small *ngIf="perfilForm.get('telefono')?.errors?.['pattern']">Debe tener 9 dígitos numéricos.</small>
+        </div>
+      </div>
+
+      <!-- Nueva contraseña -->
+      <div class="mb-3">
+        <label for="contrasena" class="form-label">Nueva contraseña</label>
+        <input
+          id="contrasena"
+          type="password"
+          class="form-control"
+          formControlName="contrasena"
+          placeholder="Contraseña (mínimo 8 caracteres, 1 mayúscula, 1 número)"
+        />
+        <div *ngIf="perfilForm.get('contrasena')?.touched && perfilForm.get('contrasena')?.invalid" class="text-danger">
+          <small *ngIf="perfilForm.get('contrasena')?.errors?.['pattern']">
+            La contraseña debe tener al menos 8 caracteres, 1 mayúscula y 1 número.
+          </small>
+        </div>
+      </div>
+
+      <!-- Confirmar contraseña -->
+      <div class="mb-3">
+        <label for="confirmarContrasena" class="form-label">Confirmar nueva contraseña</label>
+        <input
+          id="confirmarContrasena"
+          type="password"
+          class="form-control"
+          formControlName="confirmarContrasena"
+          placeholder="Repite la contraseña"
+        />
+        <div *ngIf="perfilForm.hasError('noCoinciden') && (perfilForm.get('confirmarContrasena')?.touched || perfilForm.get('contrasena')?.touched)" class="text-danger">
+          <small>Las contraseñas no coinciden.</small>
+        </div>
+      </div>
+
+      <!-- Error de contraseña igual a la anterior -->
+      <div *ngIf="errorContrasena" class="alert alert-danger">
+        {{ errorContrasena }}
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="perfilForm.invalid">Guardar cambios</button>
+
+    </form>
+  </div>
+</div>

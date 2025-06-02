@@ -1,98 +1,14 @@
-<!-- <nav class="navbar navbar-expand-lg custom-navbar-bg">
-  <div class="container-fluid">
-
-    <a class="logo-container" (click)="home()">
-      <img class="logo" src="assets/logo_padel.jpg" />
-    </a>
-
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto text-center">
-        <li class="nav-item"><a class="nav-link" (click)="reservas()">Reservas</a></li>
-        <li class="nav-item"><a class="nav-link" (click)="eventos()">Eventos</a></li>
-        <li class="nav-item"><a class="nav-link" (click)="contactos()">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" (click)="socios()">Socios</a></li>
-      </ul>
-
-
-      <div class="dropdown ms-auto me-3">
-        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          <i class="bi bi-person-circle fs-4"></i>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" routerLink="/perfil">Perfil</a></li>
-          <li><hr class="dropdown-divider"/></li>
-          <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar sesión</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav> -->
-
-
-
-
-<!-- 
 <nav class="navbar navbar-expand-lg custom-navbar-bg">
   <div class="container-fluid">
 
-  
-    <a class="navbar-brand logo-container" (click)="home()">
-      <img class="logo" src="assets/logo_padel.jpg" />
-    </a>
-
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    
-    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-      
-
-      <ul class="navbar-nav mx-auto text-center custom-navbar-links">
-        <li class="nav-item"><a class="nav-link" (click)="reservas()">Reservas</a></li>
-        <li class="nav-item"><a class="nav-link" (click)="eventos()">Eventos</a></li>
-        <li class="nav-item"><a class="nav-link" (click)="contactos()">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" (click)="socios()">Socios</a></li>
-      </ul>
-
-
-      <div class="dropdown">
-        <button class="btn btn-outline-light dropdown-toggle d-flex align-items-center" type="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-person-circle fs-4"></i>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" routerLink="/perfil">Perfil</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar sesión</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav> -->
-<nav class="navbar navbar-expand-lg custom-navbar-bg">
-  <div class="container-fluid">
-    
     <!-- Logo -->
     <a class="logo-container" (click)="home()">
       <img class="logo" src="assets/logo_padel.jpg" />
     </a>
 
     <!-- Botón hamburguesa -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarNav" aria-controls="navbarNav"
-      aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -103,21 +19,37 @@
         <li class="nav-item"><a class="nav-link" (click)="eventos()">Eventos</a></li>
         <li class="nav-item"><a class="nav-link" (click)="contactos()">Contacto</a></li>
         <li class="nav-item"><a class="nav-link" (click)="socios()">Socios</a></li>
-        <li class="nav-item d-lg-none"><a class="nav-link" routerLink="/perfil">Perfil</a></li>
-        <li class="nav-item d-lg-none"><a class="nav-link" (click)="cerrarSesion()"><i class="bi bi-power"></i>&nbsp;Cerrar sesión</a></li>
+
+        <!-- En móvil, abre modal en vez de navegar -->
+        <li class="nav-item d-lg-none">
+          <a class="nav-link" (click)="abrirPerfil(); cerrarMenu()">Perfil</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class="nav-link" (click)="cerrarSesion()">
+            <i class="bi bi-power"></i>&nbsp;Cerrar sesión
+          </a>
+        </li>
       </ul>
 
-      <!-- Menú de usuario solo en escritorio -->
+      <!-- Menú usuario escritorio -->
       <div class="dropdown d-none d-lg-block ms-3 boton-perfil">
-        <button class="btn btn-outline-light dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
           <i class="bi bi-person-circle fs-2"></i>
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" routerLink="/perfil">Perfil</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" (click)="cerrarSesion()"><i class="bi bi-power"> </i>&nbsp;Cerrar sesión</a></li>
+          <li><a class="dropdown-item" (click)="abrirPerfil()">Perfil</a></li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li><a class="dropdown-item" (click)="cerrarSesion()">
+              <i class="bi bi-power"></i>&nbsp;Cerrar sesión
+            </a></li>
         </ul>
       </div>
     </div>
   </div>
 </nav>
+
+<!-- Modal fuera del collapse -->
+<app-perfil *ngIf="mostrarPerfil" (cerrar)="cerrarPerfil()" (datosActualizados)="actualizarDatos($event)"></app-perfil>

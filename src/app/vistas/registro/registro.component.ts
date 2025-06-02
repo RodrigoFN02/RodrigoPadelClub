@@ -26,7 +26,7 @@ export class RegistroComponent {
         '',
         [
           Validators.required,
-          Validators.pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ]{0,50}$/)
+          Validators.pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ]{1,50}$/)
         ]
       ],
       email: [

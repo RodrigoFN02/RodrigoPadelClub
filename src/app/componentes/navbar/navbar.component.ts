@@ -1,41 +1,67 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PerfilComponent } from '../perfil/perfil.component'; // Asegúrate de tener esta ruta bien
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [PerfilComponent, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  datos:any
+  datos: any;
+  mostrarPerfil = false;
+
+  constructor(private ruter: Router) {}
+
   ngOnInit() {
-  const datosUsuario = localStorage.getItem('usuario');
-  if (datosUsuario) {
-    this.datos = JSON.parse(datosUsuario);
-    console.log('Usuario logueado:', this.datos);
+    const datosUsuario = localStorage.getItem('usuario');
+    if (datosUsuario) {
+      this.datos = JSON.parse(datosUsuario);
+      console.log('Usuario logueado:', this.datos);
+    }
   }
-}
-  constructor ( private ruter: Router){}
+  actualizarDatos(nuevosDatos: any) {
+    this.datos = nuevosDatos;
+  }
   cerrarSesion() {
     localStorage.removeItem('usuario');
-    console.log(localStorage)
     this.ruter.navigate(['']);
   }
+
   reservas() {
     this.ruter.navigate([`/reservas/${this.datos.nombre}`]);
   }
+
   eventos() {
     this.ruter.navigate([`/eventos/${this.datos.nombre}`]);
   }
+
   contactos() {
     this.ruter.navigate([`/contacto/${this.datos.nombre}`]);
   }
+
   socios() {
     this.ruter.navigate([`/socios/${this.datos.nombre}`]);
   }
-  home(){
+
+  home() {
     this.ruter.navigate([`/home/${this.datos.nombre}`]);
   }
+
+  abrirPerfil() {
+    this.mostrarPerfil = true;
+  }
+
+  cerrarPerfil() {
+    this.mostrarPerfil = false;
+  }
+  cerrarMenu() {
+  const navbarCollapse = document.getElementById('navbarNav');
+  if (navbarCollapse?.classList.contains('show')) {
+    navbarCollapse.classList.remove('show');
+  }
+}
 }
