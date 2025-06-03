@@ -22,43 +22,18 @@ export class RegistroComponent {
     private router: Router
   ) {
     this.registroForm = this.fb.group({
-      nombre: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ]{1,50}$/)
-        ]
-      ],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/)
-        ]
-      ],
-      telefono: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^\d{9}$/)
-        ]
-      ],
-      contrasena: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)
-        ]
-      ],
+      nombre: ['',[Validators.required,Validators.pattern(/^[A-Za-zÁÉÍÓÚáéíóúÑñ]{1,50}$/)]],
+      email: ['',[Validators.required,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/)]],
+      telefono: ['',[Validators.required,Validators.pattern(/^\d{9}$/)]],
+      contrasena: ['',[Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]],
       repetirContrasena: ['', Validators.required]
-    }, { validators: this.passwordsIguales });
+    }, { validators: this.comprobarcontrasena });
   }
 
-  // Validador personalizado
-  passwordsIguales(group: FormGroup) {
-    const pass = group.get('contrasena')?.value;
-    const repite = group.get('repetirContrasena')?.value;
-    return pass === repite ? null : { noCoinciden: true };
+  comprobarcontrasena(group: FormGroup) {
+    const contrasena = group.get('contrasena')?.value;
+    const repiteContrasena = group.get('repetirContrasena')?.value;
+    return contrasena === repiteContrasena ? null : { noCoinciden: true };
   }
 
   registrar() {

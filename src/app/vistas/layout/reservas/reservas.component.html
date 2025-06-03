@@ -22,37 +22,29 @@
         </mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="outline" class="full-width">
+      <mat-form-field appearance="fill">
         <mat-label>Hora</mat-label>
-        <mat-select formControlName="hora" placeholder="Selecciona una hora">
-          <mat-option value="">Seleccione hora</mat-option>
-          <mat-option
-            *ngFor="let hora of horasTotales"
-            [value]="hora"
-            [disabled]="horaOcupadaEnFecha(hora, reservaForm.get('fecha')?.value, reservaForm.get('pista')?.value)">
-            {{ hora }}
-            <span *ngIf="horaOcupadaEnFecha(hora, reservaForm.get('fecha')?.value, reservaForm.get('pista')?.value)">
-              (ocupada)
-            </span>
+        <mat-select formControlName="hora">
+          <mat-option *ngFor="let hora of horasTotales" [value]="hora" [disabled]="horaOcupadaEnFecha(hora)">
+            {{ hora }} <span *ngIf="horaOcupadaEnFecha(hora)"> (Ocupada)</span>
           </mat-option>
         </mat-select>
-        <mat-error *ngIf="reservaForm.get('hora')?.invalid && reservaForm.get('hora')?.touched">
-          Hora requerida.
-        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Número de pista</mat-label>
         <input matInput type="number" formControlName="pista" min="1" />
-        <mat-error *ngIf="reservaForm.get('pista')?.invalid && reservaForm.get('pista')?.touched">
-          Introduce un número válido de pista (mínimo 1).
+        <mat-error *ngIf="reservaForm.get('pista')?.hasError('required')">
+          Introduce un número válido de pista.
+        </mat-error>
+        <mat-error *ngIf="reservaForm.get('pista')?.hasError('pistaInvalida')">
+          La pista debe estar entre 1 y 9.
         </mat-error>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit" [disabled]="reservaForm.invalid">Reservar</button>
-
+      <button type="submit" [disabled]="reservaForm.invalid" [ngClass]="{'btn-activo': reservaForm.valid, 'btn-inactivo': reservaForm.invalid}">Reservar</button>
+      
       <p *ngIf="mensaje" class="mensaje-error">{{ mensaje }}</p>
-
     </form>
   </div>
 </div>

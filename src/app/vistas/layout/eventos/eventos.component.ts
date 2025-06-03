@@ -42,7 +42,6 @@ const idUsuario = usuario.id;
     return;
   }
 
-  // Comprobar si ya está registrado
   this.detallesEventosService.obtenerRegistro(idUsuario, idEvento).subscribe({
     next: (registros) => {
       if (registros.length > 0) {

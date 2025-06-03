@@ -38,30 +38,30 @@
   flex-grow: 1;
   font-size: 1rem;
   color: #444;
-  word-wrap: break-word;    /* fuerza a romper palabras largas */
+  word-wrap: break-word;    
   overflow-wrap: break-word;
-  white-space: normal;      /* para que el texto se adapte y haga salto de línea */
+  white-space: normal;     
   max-width: 100%; 
 }
 
-/* Botón ajustado */
+
 .btn-apuntarse {
-  background-color: #330B20; /* color solicitado */
+  background-color: #2323BF;
   color: white;
   border: none;
-  padding: 8px 16px; /* más estrecho */
+  padding: 8px 16px; 
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-weight: 600;
 
-  /* Posición abajo a la derecha */
+
   align-self: flex-end;
-  margin-top: auto; /* empuja el botón hacia abajo */
+  margin-top: auto;
 }
 
 .btn-apuntarse:hover {
-  background-color: #551438; /* tono más claro para hover */
+  background-color: #5353C3; 
 }
 @media (max-width: 640px) {
   .cards-container {
