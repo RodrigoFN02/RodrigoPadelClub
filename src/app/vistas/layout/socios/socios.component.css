@@ -1,4 +1,3 @@
-/* Contenedor centrado vertical y horizontal */
 .socios-container {
   max-width: 800px;
   margin: auto;
@@ -11,7 +10,6 @@
   color: #fff;
   min-height: 70vh;
 
-  /* Flex para centrar verticalmente */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,9 +54,6 @@ h1 {
   text-shadow: 0 0 3px #ffd700;
 }
 
-
-
-/* Botón con color #238300 y estilo similar al anterior */
 button {
   background-color: #238300;
   color: white;
@@ -95,7 +90,6 @@ button:disabled {
   text-shadow: 0 0 5px #ffd700;
 }
 
-/* Mensaje de error con color rojo brillante */
 .mensaje.error {
   color: #ff6b6b;
   text-shadow: 0 0 8px #ff4b4b;
@@ -105,9 +99,6 @@ button:disabled {
   margin-top: 20px;
 }
 
-/* Responsive */
-
-/* Móviles */
 @media (max-width: 480px) {
   .socios-container {
     padding: 20px 15px;
@@ -136,7 +127,6 @@ button:disabled {
   }
 }
 
-/* Tablets */
 @media (max-width: 768px) {
   .socios-container {
     max-width: 90%;

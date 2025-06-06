@@ -31,7 +31,6 @@ export class LoginComponent {
         if (respuesta.length > 0) {
           const userData = respuesta[0];
           localStorage.setItem('usuario', JSON.stringify(userData));
-          console.log(localStorage)
           this.ruta.navigate([`/home/${userData.nombre}`]);
         } else {
           this.mensaje = 'Usuario o contraseña incorrectos';

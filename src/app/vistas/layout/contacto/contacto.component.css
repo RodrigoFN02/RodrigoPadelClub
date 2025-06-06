@@ -26,7 +26,6 @@
   text-decoration: underline;
 }
 
-/* ✅ Mapa responsive real sin espacios extra */
 .mapa-container {
   width: 100%;
   margin-top: 20px;
@@ -41,7 +40,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive para móviles */
 @media (max-width: 600px) {
   .contacto-container {
     padding: 10px;

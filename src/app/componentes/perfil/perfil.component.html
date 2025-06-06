@@ -7,7 +7,7 @@
 
     <form [formGroup]="perfilForm" (ngSubmit)="guardarCambios()" novalidate>
 
-      <!-- Nombre -->
+ 
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre</label>
         <input
@@ -22,7 +22,6 @@
         </div>
       </div>
 
-      <!-- Email -->
       <div class="mb-3">
         <label for="email" class="form-label">Correo electrónico</label>
         <input
@@ -37,7 +36,6 @@
         </div>
       </div>
 
-      <!-- Teléfono -->
       <div class="mb-3">
         <label for="telefono" class="form-label">Teléfono</label>
         <input
@@ -52,7 +50,6 @@
         </div>
       </div>
 
-      <!-- Nueva contraseña -->
       <div class="mb-3">
         <label for="contrasena" class="form-label">Nueva contraseña</label>
         <input
@@ -69,7 +66,6 @@
         </div>
       </div>
 
-      <!-- Confirmar contraseña -->
       <div class="mb-3">
         <label for="confirmarContrasena" class="form-label">Confirmar nueva contraseña</label>
         <input
@@ -84,7 +80,6 @@
         </div>
       </div>
 
-      <!-- Error de contraseña igual a la anterior -->
       <div *ngIf="errorContrasena" class="alert alert-danger">
         {{ errorContrasena }}
       </div>

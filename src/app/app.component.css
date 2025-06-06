@@ -4,6 +4,6 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f0f2f5; /* o el fondo que uses */
+  background: #f0f2f5; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

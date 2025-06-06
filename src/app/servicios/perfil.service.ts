@@ -17,7 +17,7 @@ export class PerfilService {
       apikey: this.apiKey,
       Authorization: `Bearer ${this.apiKey}`,
       'Content-Type': 'application/json',
-      Prefer: 'return=representation'  // para que devuelva los nuevos datos
+      Prefer: 'return=representation' 
     });
 
     return this.http.patch(`${this.apiUrl}?id=eq.${id}`, datos, { headers });

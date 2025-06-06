@@ -1,18 +1,9 @@
-/* .contenedor{
-    display: flex;
-    justify-content: center;
-}
-.contenido{
-    border: solid;
-    width: 400px;
-    height: 300px;
-    margin-top: 20%;
-} */
+
  .contenedor {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ocupa toda la altura de la ventana */
+  height: 100vh;
   background-color: #f0f2f5;
 }
 

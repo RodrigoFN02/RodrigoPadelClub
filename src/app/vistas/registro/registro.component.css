@@ -59,7 +59,7 @@ p {
   text-align: center;
 }
 
-/* Responsive para móviles */
+
 @media screen and (max-width: 480px) {
   .contenido {
     padding: 1.5rem 1rem;

@@ -29,7 +29,6 @@ export class ReservaService {
       'Content-Type': 'application/json'
     });
   }
-  // reserva.service.ts
 getReservas() {
   const headers = new HttpHeaders({
     apikey: this.apiKey,

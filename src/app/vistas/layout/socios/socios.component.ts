@@ -6,7 +6,7 @@ import { DialogComponent } from '../../../componentes/dialog/dialog.component';
 
 @Component({
   selector: 'app-socios',
-  imports: [CommonModule, DialogComponent],
+  imports: [CommonModule],
   standalone: true,
   templateUrl: './socios.component.html',
   styleUrls: ['./socios.component.css']
@@ -22,7 +22,7 @@ export class SociosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const usuarioStr = localStorage.getItem('usuario'); // Asumiendo que lo guardaste con esa clave
+    const usuarioStr = localStorage.getItem('usuario');
     if (usuarioStr) {
       this.usuario = JSON.parse(usuarioStr);
 

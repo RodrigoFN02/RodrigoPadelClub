@@ -18,9 +18,6 @@ export class SociosService {
 
   constructor(private http: HttpClient) {}
 
-  /**
-   * Comprueba si el usuario ya es socio
-   */
   comprobarSocio(id_usuario: number): Observable<{ esSocio: boolean }> {
     const url = `${this.apiUrl}?id_usuario=eq.${id_usuario}`;
     return this.http.get<any[]>(url, { headers: this.headers }).pipe(
@@ -28,16 +25,10 @@ export class SociosService {
     );
   }
 
-  /**
-   * Registra un nuevo socio
-   */
   registrarSocio(socio: { id_usuario: number, nombre_socio: string }): Observable<any> {
     return this.http.post(this.apiUrl, socio, { headers: this.headers });
   }
 
-  /**
-   * Elimina la suscripción del socio
-   */
   eliminarSocio(id_usuario: number): Observable<any> {
     const url = `${this.apiUrl}?id_usuario=eq.${id_usuario}`;
     const deleteHeaders = this.headers.set('Prefer', 'return=minimal');

@@ -20,7 +20,7 @@ export class NavbarComponent {
     const datosUsuario = localStorage.getItem('usuario');
     if (datosUsuario) {
       this.datos = JSON.parse(datosUsuario);
-      console.log('Usuario logueado:', this.datos);
+
     }
   }
   actualizarDatos(nuevosDatos: any) {

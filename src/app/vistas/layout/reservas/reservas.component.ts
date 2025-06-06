@@ -88,7 +88,6 @@ actualizarReservasYValidar() {
 cargarReservas() {
   this.reservaService.obtenerReservas().subscribe(res => {
     this.reservas = res;
-    console.log('Reservas cargadas:', this.reservas);
     this.actualizarHorasOcupadas();
   });
 }
@@ -103,12 +102,10 @@ actualizarHorasOcupadas() {
 
   const fechaStr = formatDate(fecha, 'yyyy-MM-dd', 'en');
 
-  // Normalizar hora quitando segundos: "09:00:00" -> "09:00"
+
   this.horasOcupadas = this.reservas
     .filter(r => r.fecha === fechaStr && String(r.n_pista) === String(pista))
-    .map(r => r.hora.substring(0,5)); // Toma solo HH:mm
-
-  console.log('Horas ocupadas actualizadas:', this.horasOcupadas);
+    .map(r => r.hora.substring(0,5)); 
 
   const horaSeleccionada = this.reservaForm.get('hora')?.value;
   if (horaSeleccionada && this.horasOcupadas.includes(horaSeleccionada)) {
@@ -147,7 +144,6 @@ enviar() {
     return;
   }
 
-  // Verificamos si la hora seleccionada está ocupada (prevención extra)
   const fecha = this.reservaForm.get('fecha')?.value;
   const pista = this.reservaForm.get('pista')?.value;
   const hora = this.reservaForm.get('hora')?.value;

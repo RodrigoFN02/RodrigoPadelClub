@@ -46,12 +46,12 @@ button {
 }
 
 .btn-activo {
-  background-color: #4caf50; /* verde atractivo */
+  background-color: #4caf50; 
   color: white;
 }
 
 .btn-activo:hover {
-  background-color: #45a049; /* verde un poco más oscuro al pasar el ratón */
+  background-color: #45a049;
 }
 .mensaje-error {
   margin-top: 1rem;
@@ -60,7 +60,6 @@ button {
   text-align: center;
 }
 
-/* Responsivo */
 @media (max-width: 600px) {
   .contenido {
     padding: 1rem;
@@ -75,11 +74,11 @@ button {
     gap: 1rem;
   }
   button {
-    width: 100%;        /* Botón ocupa todo el ancho */
-    font-size: 1.2rem;  /* Texto un poco más grande */
-    padding: 14px 0;    /* Padding vertical aumentado */
-    min-width: unset;   /* Quitar ancho mínimo fijo */
-    border-radius: 8px; /* Bordes un poco más redondeados */
+    width: 100%;        
+    font-size: 1.2rem;  
+    padding: 14px 0;    
+    min-width: unset;   
+    border-radius: 8px; 
   }
 }
 
